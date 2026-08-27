@@ -1,0 +1,1716 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>For My Amazing Sister ❤️ | Happy Raksha Bandhan</title>
+
+    <meta
+      name="description"
+      content="A special Raksha Bandhan surprise made with love for the best sister ever."
+    />
+
+    <style>
+      /* =========================================================
+       RAKSHA BANDHAN SURPRISE WEBSITE
+       Single-file HTML + CSS + JavaScript
+       ========================================================= */
+
+      :root {
+        --maroon: #701c32;
+        --deep-maroon: #481022;
+        --wine: #8e2945;
+        --gold: #e7b84b;
+        --bright-gold: #ffd76a;
+        --pink: #f4a6b8;
+        --soft-pink: #fde1e8;
+        --cream: #fff8ed;
+        --cream-dark: #f7ead5;
+        --white: #ffffff;
+        --text: #42242c;
+        --shadow: rgba(72, 16, 34, 0.18);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background:
+          radial-gradient(
+            circle at 20% 10%,
+            rgba(255, 215, 106, 0.18),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 80% 30%,
+            rgba(244, 166, 184, 0.15),
+            transparent 25%
+          ),
+          var(--cream);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      button {
+        font-family: inherit;
+      }
+
+      /* =========================================================
+       LOADING / ENTRANCE
+       ========================================================= */
+
+      #entrance {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: radial-gradient(
+          circle at center,
+          #8e2945 0%,
+          #701c32 45%,
+          #3b0c1b 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        transition:
+          opacity 1s ease,
+          visibility 1s ease;
+      }
+
+      #entrance.hide {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .entrance-content {
+        padding: 25px;
+        animation: entranceUp 1.2s ease both;
+      }
+
+      .entrance-content h1 {
+        font-size: clamp(2.5rem, 8vw, 5.5rem);
+        margin-top: 35px;
+        color: var(--bright-gold);
+        text-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .entrance-content p {
+        font-size: 1.15rem;
+        margin: 15px 0 30px;
+        color: #ffeef2;
+      }
+
+      .enter-btn {
+        border: 1px solid var(--bright-gold);
+        background: linear-gradient(135deg, var(--gold), #c98c24);
+        color: var(--deep-maroon);
+        padding: 14px 32px;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        transition: 0.3s ease;
+      }
+
+      .enter-btn:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      @keyframes entranceUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* =========================================================
+       3D RAKHI
+       ========================================================= */
+
+      .rakhi-3d {
+        width: 170px;
+        height: 170px;
+        margin: auto;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rakhiFloat 4s ease-in-out infinite;
+        filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25));
+      }
+
+      .rakhi-center {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        left: 40px;
+        top: 40px;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 35% 30%, #fff6ae 0 5%, transparent 6%),
+          radial-gradient(
+            circle,
+            #ffd967 0 22%,
+            #e7a92e 23% 43%,
+            #9b3c4e 44% 57%,
+            #f4bd45 58% 67%,
+            #7a2036 68%
+          );
+        border: 4px solid var(--bright-gold);
+        box-shadow:
+          inset 0 0 20px rgba(255, 255, 255, 0.5),
+          0 0 25px rgba(255, 215, 106, 0.55);
+        transform: translateZ(20px);
+      }
+
+      .rakhi-center::after {
+        content: "✦";
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        font-size: 35px;
+        color: white;
+        text-shadow: 0 2px 8px #9b3c4e;
+      }
+
+      .thread {
+        position: absolute;
+        width: 170px;
+        height: 10px;
+        top: 80px;
+        left: 0;
+        border-radius: 20px;
+        background: linear-gradient(to bottom, #8d203d, #e6ad37, #7d1c37);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .bead {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: var(--gold);
+        box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .bead.b1 {
+        left: 12px;
+        top: 77px;
+      }
+      .bead.b2 {
+        right: 12px;
+        top: 77px;
+      }
+
+      @keyframes rakhiFloat {
+        0%,
+        100% {
+          transform: translateY(0) rotateY(0deg);
+        }
+        50% {
+          transform: translateY(-15px) rotateY(8deg);
+        }
+      }
+
+      /* =========================================================
+       FLOATING DECORATIONS
+       ========================================================= */
+
+      .floating-layer {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 10;
+      }
+
+      .float-item {
+        position: absolute;
+        top: -50px;
+        animation: falling linear infinite;
+        opacity: 0.85;
+      }
+
+      .flower {
+        font-size: 22px;
+      }
+
+      .sparkle {
+        color: var(--gold);
+        font-size: 18px;
+        text-shadow: 0 0 12px var(--bright-gold);
+      }
+
+      .petal {
+        width: 10px;
+        height: 17px;
+        border-radius: 80% 20% 80% 20%;
+        background: var(--pink);
+      }
+
+      @keyframes falling {
+        0% {
+          transform: translate3d(0, -60px, 0) rotate(0deg);
+        }
+        50% {
+          transform: translate3d(60px, 50vh, 0) rotate(180deg);
+        }
+        100% {
+          transform: translate3d(-50px, 110vh, 0) rotate(360deg);
+        }
+      }
+
+      /* =========================================================
+       NAVIGATION
+       ========================================================= */
+
+      nav {
+        position: fixed;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(92%, 900px);
+        z-index: 100;
+        padding: 12px 20px;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50px;
+        background: rgba(112, 28, 50, 0.8);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: 0.25s ease;
+      }
+
+      nav a:hover {
+        color: var(--bright-gold);
+      }
+
+      /* =========================================================
+       HERO
+       ========================================================= */
+
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        position: relative;
+        padding: 110px 20px 80px;
+        background:
+          linear-gradient(rgba(112, 28, 50, 0.82), rgba(72, 16, 34, 0.94)),
+          radial-gradient(circle at center, #b13a59, #481022);
+        color: white;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border: 1px solid rgba(255, 215, 106, 0.15);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 80px rgba(255, 215, 106, 0.03),
+          0 0 0 160px rgba(255, 215, 106, 0.02);
+      }
+
+      .hero-content {
+        text-align: center;
+        max-width: 900px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .eyebrow {
+        color: var(--bright-gold);
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 9vw, 7rem);
+        line-height: 0.95;
+        margin-bottom: 25px;
+        text-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero h1 span {
+        color: var(--bright-gold);
+      }
+
+      .hero p {
+        max-width: 650px;
+        margin: auto;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #ffecef;
+      }
+
+      .hero-actions {
+        margin-top: 35px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 25px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s ease;
+      }
+
+      .btn-gold {
+        background: var(--gold);
+        color: var(--deep-maroon);
+      }
+
+      .btn-outline {
+        border: 1px solid var(--bright-gold);
+        color: var(--bright-gold);
+        background: transparent;
+      }
+
+      .btn:hover {
+        transform: translateY(-4px);
+      }
+
+      /* =========================================================
+       GENERAL SECTIONS
+       ========================================================= */
+
+      section {
+        padding: 100px 20px;
+        position: relative;
+      }
+
+      .section-container {
+        width: min(1100px, 100%);
+        margin: auto;
+      }
+
+      .section-heading {
+        text-align: center;
+        margin-bottom: 55px;
+      }
+
+      .section-heading .small {
+        color: var(--wine);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 0.75rem;
+        font-weight: bold;
+      }
+
+      .section-heading h2 {
+        color: var(--maroon);
+        font-size: clamp(2.2rem, 5vw, 3.8rem);
+        margin: 12px 0;
+      }
+
+      .section-heading p {
+        max-width: 600px;
+        margin: auto;
+        line-height: 1.8;
+        color: #75515b;
+      }
+
+      /* =========================================================
+       MEMORY CARDS
+       ========================================================= */
+
+      .memories {
+        background:
+          linear-gradient(rgba(255, 248, 237, 0.92), rgba(255, 248, 237, 0.92)),
+          repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(112, 28, 50, 0.025) 10px,
+            rgba(112, 28, 50, 0.025) 11px
+          );
+      }
+
+      .memory-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .memory-card {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(112, 28, 50, 0.1);
+        border-radius: 25px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 15px 45px var(--shadow);
+        transition: 0.4s ease;
+      }
+
+      .memory-card:hover {
+        transform: translateY(-10px) rotate(-1deg);
+        box-shadow: 0 25px 55px rgba(112, 28, 50, 0.2);
+      }
+
+      .memory-icon {
+        font-size: 3rem;
+        margin-bottom: 18px;
+      }
+
+      .memory-card h3 {
+        color: var(--maroon);
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+      }
+
+      .memory-card p {
+        color: #74525c;
+        line-height: 1.7;
+      }
+
+      /* =========================================================
+       PHOTO GALLERY
+       ========================================================= */
+
+      .gallery-section {
+        background: var(--soft-pink);
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+
+      .photo {
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        border: 4px solid white;
+        box-shadow: 0 12px 35px rgba(72, 16, 34, 0.15);
+        background: var(--cream-dark);
+      }
+
+      .photo:first-child {
+        grid-row: span 2;
+        height: 618px;
+      }
+
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition:
+          transform 0.6s ease,
+          filter 0.6s ease;
+      }
+
+      .photo:hover img {
+        transform: scale(1.12);
+        filter: saturate(1.2);
+      }
+
+      .photo::after {
+        content: "❤️";
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        opacity: 0;
+        transform: scale(0.5);
+        transition: 0.3s ease;
+        font-size: 1.4rem;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .photo:hover::after {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* =========================================================
+       LETTER
+       ========================================================= */
+
+      .letter-section {
+        background: var(--cream);
+      }
+
+      .letter {
+        max-width: 850px;
+        margin: auto;
+        padding: clamp(30px, 6vw, 70px);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 246, 229, 0.95)
+        );
+        border-radius: 5px;
+        position: relative;
+        box-shadow: 0 25px 70px rgba(72, 16, 34, 0.15);
+        border: 1px solid #efd6ad;
+      }
+
+      .letter::before,
+      .letter::after {
+        content: "❦";
+        position: absolute;
+        color: var(--gold);
+        font-size: 35px;
+      }
+
+      .letter::before {
+        top: 20px;
+        left: 25px;
+      }
+
+      .letter::after {
+        bottom: 20px;
+        right: 25px;
+        transform: rotate(180deg);
+      }
+
+      .letter h3 {
+        color: var(--maroon);
+        font-size: 2rem;
+        margin-bottom: 25px;
+      }
+
+      .letter p {
+        font-size: 1.08rem;
+        line-height: 2;
+        color: #594049;
+        margin-bottom: 18px;
+      }
+
+      .signature {
+        margin-top: 30px;
+        text-align: right;
+        color: var(--maroon);
+        font-size: 1.3rem;
+        font-style: italic;
+      }
+
+      /* =========================================================
+       GIFT SECTION
+       ========================================================= */
+
+      .gift-section {
+        background: radial-gradient(circle at center, #8e2945, #481022);
+        color: white;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .gift-section .section-heading h2 {
+        color: var(--bright-gold);
+      }
+
+      .gift-section .section-heading p {
+        color: #f9dfe6;
+      }
+
+      .gift-box {
+        width: 180px;
+        height: 150px;
+        margin: 60px auto 30px;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        filter: drop-shadow(0 25px 20px rgba(0, 0, 0, 0.3));
+      }
+
+      .gift-box:hover {
+        transform: translateY(-10px) rotate(-2deg);
+      }
+
+      .gift-base {
+        position: absolute;
+        width: 150px;
+        height: 100px;
+        left: 15px;
+        bottom: 0;
+        background: linear-gradient(135deg, #c73555, #77152e);
+        border: 3px solid var(--gold);
+        border-radius: 4px 4px 12px 12px;
+      }
+
+      .gift-base::before {
+        content: "";
+        position: absolute;
+        left: 57px;
+        width: 30px;
+        height: 100%;
+        background: linear-gradient(to right, #f8c84e, #ffe28c, #d49a2e);
+      }
+
+      .gift-lid {
+        position: absolute;
+        width: 175px;
+        height: 35px;
+        left: 2px;
+        top: 30px;
+        border-radius: 7px;
+        background: linear-gradient(135deg, #e14965, #85172f);
+        border: 3px solid var(--gold);
+        z-index: 2;
+        transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .gift-lid::after {
+        content: "";
+        position: absolute;
+        left: 68px;
+        width: 30px;
+        height: 30px;
+        top: 0;
+        background: linear-gradient(to right, #f8c84e, #ffe28c, #d49a2e);
+      }
+
+      .gift-bow {
+        position: absolute;
+        width: 70px;
+        height: 50px;
+        left: 55px;
+        top: 0;
+        z-index: 4;
+      }
+
+      .gift-bow::before,
+      .gift-bow::after {
+        content: "";
+        position: absolute;
+        width: 38px;
+        height: 30px;
+        top: 5px;
+        border: 3px solid var(--gold);
+        background: #dc3e5e;
+      }
+
+      .gift-bow::before {
+        left: 0;
+        border-radius: 80% 20% 50% 50%;
+        transform: rotate(-20deg);
+      }
+
+      .gift-bow::after {
+        right: 0;
+        border-radius: 20% 80% 50% 50%;
+        transform: rotate(20deg);
+      }
+
+      .gift-box.open .gift-lid {
+        transform: translateY(-75px) rotate(-7deg);
+      }
+
+      .gift-hint {
+        color: #f8dfe5;
+        font-size: 0.95rem;
+      }
+
+      /* =========================================================
+       MODAL
+       ========================================================= */
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(39, 5, 16, 0.8);
+        backdrop-filter: blur(8px);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.35s ease;
+      }
+
+      .modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-card {
+        width: min(600px, 100%);
+        background: var(--cream);
+        border-radius: 28px;
+        padding: 45px;
+        text-align: center;
+        position: relative;
+        transform: translateY(30px) scale(0.95);
+        transition: 0.4s ease;
+        box-shadow: 0 30px 100px rgba(0, 0, 0, 0.4);
+        border: 3px solid var(--gold);
+      }
+
+      .modal.active .modal-card {
+        transform: translateY(0) scale(1);
+      }
+
+      .modal-card .gift-icon {
+        font-size: 4rem;
+        margin-bottom: 15px;
+        animation: giftBounce 1.2s infinite;
+      }
+
+      @keyframes giftBounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px) rotate(4deg);
+        }
+      }
+
+      .modal-card h2 {
+        color: var(--maroon);
+        font-size: 2.4rem;
+        margin-bottom: 15px;
+      }
+
+      .voucher {
+        margin: 25px 0;
+        padding: 20px;
+        border: 2px dashed var(--gold);
+        background: #fff8e8;
+        border-radius: 15px;
+        color: var(--maroon);
+        font-weight: bold;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 18px;
+        width: 38px;
+        height: 38px;
+        border: none;
+        border-radius: 50%;
+        background: var(--maroon);
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+
+      /* =========================================================
+       MUSIC BUTTON
+       ========================================================= */
+
+      .music-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 200;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        background: var(--maroon);
+        color: var(--bright-gold);
+        font-size: 1.4rem;
+        cursor: pointer;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        transition: 0.3s ease;
+      }
+
+      .music-button:hover {
+        transform: scale(1.1);
+      }
+
+      .music-button.playing {
+        animation: musicPulse 1.3s infinite;
+      }
+
+      @keyframes musicPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(231, 184, 75, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 0 14px rgba(231, 184, 75, 0);
+        }
+      }
+
+      /* =========================================================
+       FOOTER
+       ========================================================= */
+
+      footer {
+        text-align: center;
+        padding: 45px 20px;
+        background: var(--deep-maroon);
+        color: #f9dfe6;
+      }
+
+      footer strong {
+        color: var(--bright-gold);
+      }
+
+      /* =========================================================
+       SCROLL REVEAL
+       ========================================================= */
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(0px);
+        transition:
+          opacity 0.9s ease,
+          transform 0.9s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* =========================================================
+       CONFETTI
+       ========================================================= */
+
+      .confetti {
+        position: fixed;
+        width: 9px;
+        height: 14px;
+        z-index: 2000;
+        pointer-events: none;
+        animation: confettiFall 2.8s ease-out forwards;
+      }
+
+      @keyframes confettiFall {
+        0% {
+          transform: translate(0, 0) rotate(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(calc((var(--x) - 0.5) * 600px), 90vh)
+            rotate(720deg);
+          opacity: 0;
+        }
+      }
+
+      /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+      @media (max-width: 800px) {
+        nav {
+          gap: 14px;
+        }
+
+        nav a {
+          font-size: 0.75rem;
+        }
+
+        .memory-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .photo:first-child {
+          grid-row: span 1;
+          height: 300px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        nav {
+          display: none;
+        }
+
+        section {
+          padding: 75px 16px;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .photo,
+        .photo:first-child {
+          height: 330px;
+        }
+
+        .modal-card {
+          padding: 35px 22px;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =======================================================
+       ENTRANCE SCREEN
+       ======================================================= -->
+
+    <div id="entrance">
+      <div class="entrance-content">
+        <div class="rakhi-3d">
+          <div class="thread"></div>
+          <div class="bead b1"></div>
+          <div class="bead b2"></div>
+          <div class="rakhi-center"></div>
+        </div>
+
+        <h1>A Little Surprise<br />For You ❤️</h1>
+
+        <p>
+          Because the world's most wonderful sister deserves more than just a
+          Rakhi.
+        </p>
+
+        <button class="enter-btn" onclick="enterWebsite()">
+          Open Your Surprise ✨
+        </button>
+      </div>
+    </div>
+
+    <!-- =======================================================
+       FLOATING FESTIVE ELEMENTS
+       ======================================================= -->
+
+    <div class="floating-layer" id="floatingLayer"></div>
+
+    <!-- =======================================================
+       NAVIGATION
+       ======================================================= -->
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#memories">Memories</a>
+      <a href="#gallery">Photos</a>
+      <a href="#letter">Letter</a>
+      <a href="#gift">Surprise 🎁</a>
+    </nav>
+
+    <!-- =======================================================
+       HERO
+       ======================================================= -->
+
+    <header class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Happy Raksha Bandhan</div>
+
+        <div class="rakhi-3d">
+          <div class="thread"></div>
+          <div class="bead b1"></div>
+          <div class="bead b2"></div>
+          <div class="rakhi-center"></div>
+        </div>
+
+        <!-- CUSTOMIZE HERE: Sister's name -->
+        <h1>
+          For My<br />
+          <span>Beautiful Sister NEHA 💫</span>
+        </h1>
+
+        <p>
+          Some people are gifts from life. And somehow, I got the most annoying,
+          caring, hilarious, irreplaceable gift of all —
+          <strong>you.</strong> ❤️
+        </p>
+
+        <div class="hero-actions">
+          <a href="#letter" class="btn btn-gold"> Read My Letter 💌 </a>
+
+          <a href="#gift" class="btn btn-outline"> There's More... 🎁 </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =======================================================
+       MEMORIES
+       ======================================================= -->
+
+    <section class="memories" id="memories">
+      <div class="section-container">
+        <div class="section-heading reveal">
+          <div class="small">Our Little Universe</div>
+
+          <h2>Why You're Special</h2>
+
+          <p>
+            A few reasons why having you as my sister is one of life's greatest
+            blessings.
+          </p>
+        </div>
+
+        <div class="memory-grid">
+          <div class="memory-card reveal">
+            <div class="memory-icon">😂</div>
+
+            <h3>Partner in Crime</h3>
+
+            <p>
+              From silly arguments to ridiculous adventures, life is never
+              boring when we're together.
+            </p>
+          </div>
+
+          <div class="memory-card reveal">
+            <div class="memory-icon">🫶</div>
+
+            <h3>Always There</h3>
+
+            <p>
+              No matter what happens, I know there's always someone I can count
+              on — you.
+            </p>
+          </div>
+
+          <div class="memory-card reveal">
+            <div class="memory-icon">✨</div>
+
+            <h3>One of a Kind</h3>
+
+            <p>
+              There is nobody else quite like you, and honestly, the world is
+              better because of it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+       PHOTO GALLERY
+       ======================================================= -->
+
+    <section class="gallery-section" id="gallery">
+      <div class="section-container">
+        <div class="section-heading reveal">
+          <div class="small">Our Memories</div>
+
+          <h2>Little Moments ❤️</h2>
+
+          <p>
+            Replace these placeholder photos with your favorite memories
+            together.
+          </p>
+        </div>
+
+        <div class="gallery">
+          <!--
+          =====================================================
+          PHOTO CUSTOMIZATION
+
+          Replace the src URL below with your sister's photos.
+
+          Example:
+          src="images/sister1.jpg"
+
+          OR:
+          src="https://yourwebsite.com/photo.jpg"
+
+          You can add/remove .photo elements as needed.
+          =====================================================
+        -->
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #1 -->
+            <img src="12.jpeg" alt="Favorite memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #2 -->
+            <img src="2.jpeg" alt="Beautiful memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #3 -->
+            <img src="3.jpeg" alt="Special memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="4.jpeg" alt="Our memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #5 -->
+            <img src="9.jpeg" alt="Family memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="5.jpeg" alt="Our memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="7.jpeg" alt="Our memory" />
+          </div>
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="8.jpeg" alt="Our memory" />
+          </div>
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="9.jpeg" height="400px" alt="Our memory" />
+          </div>
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="10.jpeg" alt="Our memory" />
+          </div>
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="11.jpeg" alt="Our memory" />
+          </div>
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="12.jpeg" alt="Our memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="13.jpeg" alt="Our memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="14.jpeg" alt="Our memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="15.jpeg" alt="Our memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="16.jpeg" alt="Our memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="17.jpeg" alt="Our memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="18.jpeg" alt="Our memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="19.jpeg" alt="Our memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="20.jpeg" alt="Our memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="21.jpeg" alt="Our memory" />
+          </div>
+
+          <div class="photo reveal">
+            <!-- CUSTOMIZE HERE: Replace with sister photo #4 -->
+            <img src="22.jpeg" alt="Our memory" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+       LETTER
+       ======================================================= -->
+
+    <section class="letter-section" id="letter">
+      <div class="section-container">
+        <div class="section-heading reveal">
+          <div class="small">From My Heart</div>
+
+          <h2>A Letter For You</h2>
+        </div>
+
+        <article class="letter reveal">
+          <!-- CUSTOMIZE HERE: Change greeting/name -->
+          <h3>Dear Best Sister Ever,</h3>
+
+          <!-- CUSTOMIZE HERE: Personalize this entire letter -->
+
+          <p>Happy Raksha Bandhan! ❤️ Neha</p>
+
+          <p>
+            I don't always say it, but having you as my sister is something I am
+            incredibly grateful for. We've laughed together, fought over the
+            smallest things, annoyed each other endlessly, and somehow still
+            ended up being each other's people.
+          </p>
+
+          <p>
+            Thank you for all the little things you do — for the laughs, the
+            advice, the support, the random conversations, and for simply being
+            there.
+          </p>
+
+          <p>
+            No matter how much life changes or how far we go, one thing will
+            never change:
+            <strong
+              >you will always be my sister and one of the most important people
+              in my life.</strong
+            >
+          </p>
+
+          <p>
+            I hope you always chase your dreams, keep that beautiful smile, and
+            remember that someone will always be cheering for you.
+          </p>
+
+          <p>
+            Today, the Rakhi is a little reminder of the bond we already carry
+            in our hearts every single day.
+          </p>
+
+          <div class="signature">
+            With lots of love,<br />
+
+            <!-- CUSTOMIZE HERE: Your name -->
+            <strong>Your Loving Brother/Sister ❤️ ARUN</strong>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =======================================================
+       GIFT / SURPRISE
+       ======================================================= -->
+
+    <section class="gift-section" id="gift">
+      <div class="section-container">
+        <div class="section-heading reveal">
+          <div class="small">One Last Thing...</div>
+
+          <h2>Your Secret Surprise 🎁</h2>
+
+          <p>
+            You didn't think I'd stop at a website, did you? Click the gift to
+            find out what's inside.
+          </p>
+        </div>
+
+        <div
+          class="gift-box reveal"
+          id="giftBox"
+          onclick="openGift()"
+          role="button"
+          tabindex="0"
+          aria-label="Open your surprise gift"
+        >
+          <div class="gift-bow"></div>
+
+          <div class="gift-lid"></div>
+
+          <div class="gift-base"></div>
+        </div>
+
+        <p class="gift-hint">👆 Tap the gift to unwrap your surprise</p>
+      </div>
+    </section>
+
+    <!-- =======================================================
+       GIFT MODAL
+       ======================================================= -->
+
+    <div class="modal" id="giftModal">
+      <div class="modal-card">
+        <button class="close-modal" onclick="closeGift()" aria-label="Close">
+          ×
+        </button>
+
+        <div class="gift-icon">🎁</div>
+
+        <!-- CUSTOMIZE HERE -->
+        <h2>Best Sister Ever! 🥹❤️</h2>
+
+        <p>
+          Congratulations! You have officially unlocked your very special Raksha
+          Bandhan surprise.
+        </p>
+
+        <div class="voucher">
+          🎟️ SPECIAL SISTER VOUCHER
+
+          <br /><br />
+
+          <!-- CUSTOMIZE HERE -->
+          One Unlimited "You Owe Me A Treat" Voucher
+
+          <br /><br />
+
+          Valid Forever ✨
+        </div>
+
+        <p>
+          Fine print: You are loved more than you know. This voucher can also be
+          redeemed for hugs, food, shopping, or absolutely unnecessary sibling
+          adventures. ❤️
+        </p>
+
+        <br />
+
+        <button class="btn btn-gold" onclick="closeGift()">
+          Aww, Okay! 🥰
+        </button>
+      </div>
+    </div>
+
+    <!-- =======================================================
+       MUSIC
+       ======================================================= -->
+
+    <!--
+    =========================================================
+    MUSIC CUSTOMIZATION
+
+    Put your music file in the same folder as this HTML:
+
+      music/raksha-bandhan.mp3
+
+    Then change the src below.
+
+    Example:
+      src="music/raksha-bandhan.mp3"
+
+    You can use any normal MP3 file that you have permission
+    to use.
+    =========================================================
+  -->
+
+    <audio id="bgMusic" loop>
+      <!-- CUSTOMIZE HERE: Replace with your music file -->
+      <source src="music/raksha-bandhan.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button
+      class="music-button"
+      id="musicButton"
+      onclick="toggleMusic()"
+      aria-label="Play or pause music"
+      title="Play/Pause music"
+    >
+      🔇
+    </button>
+
+    <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+    <footer>
+      Made with ❤️ especially for
+
+      <!-- CUSTOMIZE HERE -->
+      <strong>the best sister in the world</strong>
+
+      <br /><br />
+
+      Happy Raksha Bandhan ✨
+    </footer>
+
+    <script>
+      /* =========================================================
+       ENTRANCE
+       ========================================================= */
+
+      const entrance = document.getElementById("entrance");
+
+      function enterWebsite() {
+        entrance.classList.add("hide");
+
+        createConfetti();
+
+        // Attempt music after user interaction.
+        // Because the user clicked this button, browsers usually
+        // allow audio playback.
+        const music = document.getElementById("bgMusic");
+
+        music
+          .play()
+          .then(() => {
+            musicButton.textContent = "🎵";
+            musicButton.classList.add("playing");
+          })
+          .catch(() => {
+            // Music file may not exist yet.
+            musicButton.textContent = "🔇";
+          });
+      }
+
+      /* =========================================================
+       FLOATING FLOWERS / SPARKLES
+       ========================================================= */
+
+      const floatingLayer = document.getElementById("floatingLayer");
+
+      const decorations = [
+        "🌸",
+        "🌺",
+        "🌼",
+        "✨",
+        "💮",
+        "✦",
+        "🌸",
+        "💕",
+        "😀",
+        "💫",
+        "💝",
+        "(❤️´艸｀❤️)",
+        "😍",
+        "😎",
+        "🥰",
+      ];
+
+      function createFloatingDecoration() {
+        const item = document.createElement("div");
+
+        item.className = "float-item";
+
+        const randomDecoration =
+          decorations[Math.floor(Math.random() * decorations.length)];
+
+        item.textContent = randomDecoration;
+
+        item.style.left = Math.random() * 100 + "%";
+
+        item.style.animationDuration = 7 + Math.random() * 9 + "s";
+
+        item.style.animationDelay = Math.random() * 5 + "s";
+
+        item.style.fontSize = 12 + Math.random() * 18 + "px";
+
+        floatingLayer.appendChild(item);
+
+        setTimeout(() => {
+          item.remove();
+        }, 18000);
+      }
+
+      // Create decorations continuously.
+      setInterval(createFloatingDecoration, 500);
+
+      // Initial decorations.
+      for (let i = 0; i < 18; i++) {
+        createFloatingDecoration();
+      }
+
+      /* =========================================================
+       SCROLL REVEAL
+       ========================================================= */
+
+      const revealElements = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+        },
+      );
+
+      revealElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      /* =========================================================
+       GIFT BOX
+       ========================================================= */
+
+      const giftBox = document.getElementById("giftBox");
+
+      const giftModal = document.getElementById("giftModal");
+
+      function openGift() {
+        giftBox.classList.add("open");
+
+        createConfetti();
+
+        setTimeout(() => {
+          giftModal.classList.add("active");
+        }, 500);
+      }
+
+      function closeGift() {
+        giftModal.classList.remove("active");
+      }
+
+      // Allow keyboard interaction.
+      giftBox.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+
+          openGift();
+        }
+      });
+
+      // Close modal when clicking outside.
+      giftModal.addEventListener("click", function (event) {
+        if (event.target === giftModal) {
+          closeGift();
+        }
+      });
+
+      // Escape closes modal.
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeGift();
+        }
+      });
+
+      /* =========================================================
+       CONFETTI
+       ========================================================= */
+
+      function createConfetti() {
+        const colors = [
+          "#e7b84b",
+          "#ffd76a",
+          "#f4a6b8",
+          "#ffffff",
+          "#8e2945",
+          "#ff6f91",
+        ];
+
+        for (let i = 0; i < 80; i++) {
+          const piece = document.createElement("div");
+
+          piece.className = "confetti";
+
+          piece.style.left = 40 + Math.random() * 20 + "vw";
+
+          piece.style.top = "30vh";
+
+          piece.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+
+          piece.style.setProperty("--x", Math.random());
+
+          piece.style.animationDelay = Math.random() * 0.7 + "s";
+
+          piece.style.width = 5 + Math.random() * 8 + "px";
+
+          piece.style.height = 8 + Math.random() * 12 + "px";
+
+          document.body.appendChild(piece);
+
+          setTimeout(() => {
+            piece.remove();
+          }, 4000);
+        }
+      }
+
+      /* =========================================================
+       MUSIC PLAYER
+       ========================================================= */
+
+      const music = document.getElementById("bgMusic");
+
+      const musicButton = document.getElementById("musicButton");
+
+      function toggleMusic() {
+        if (music.paused) {
+          music
+            .play()
+            .then(() => {
+              musicButton.textContent = "🎵";
+
+              musicButton.classList.add("playing");
+            })
+            .catch(() => {
+              alert("Please add your MP3 file at music/raksha-bandhan.mp3");
+            });
+        } else {
+          music.pause();
+
+          musicButton.textContent = "🔇";
+
+          musicButton.classList.remove("playing");
+        }
+      }
+
+      /* =========================================================
+       SMALL PARALLAX EFFECT FOR HERO RAKHI
+       ========================================================= */
+
+      const heroRakhi = document.querySelector(".hero .rakhi-3d");
+
+      document.addEventListener("mousemove", (event) => {
+        if (!heroRakhi) return;
+
+        const x = (event.clientX / window.innerWidth - 0.5) * 10;
+
+        const y = (event.clientY / window.innerHeight - 0.5) * 10;
+
+        heroRakhi.style.transform = `translateY(-5px) rotateY(${x}deg) rotateX(${-y}deg)`;
+      });
+
+      /* =========================================================
+       HEART BURST WHEN CLICKING HERO
+       ========================================================= */
+
+      document.querySelector(".hero").addEventListener("dblclick", function () {
+        createConfetti();
+      });
+
+      /* =========================================================
+       PREVENT MUSIC BUTTON FROM AFFECTING PAGE
+       ========================================================= */
+
+      musicButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
+    </script>
+  </body>
+</html>
